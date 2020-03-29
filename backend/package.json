@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js",
-    "test": "cross-env NODE_ENC=test jest"
+    "test": "cross-env NODE_ENC=test jest",
+    "testAll": "npm run test incident.spec.js && npm run test ong.spec.js && npm run test profile.spec.js && npm run test sessions.spec.js"
   },
   "keywords": [],
   "author": "",
