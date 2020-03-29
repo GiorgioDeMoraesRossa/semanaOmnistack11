@@ -37,9 +37,11 @@ describe("profile", () => {
     seedFile(ong1.body.id);
     seedFile(ong2.body.id);
 
-    const [count] = await connection("incidents")
+    const [count] = await connection("incidents") // ong1 incidents
       .where("ong_id", ong1.body.id)
       .count();
+
+    const [count2] = await connection("incidents").count(); //total incidents
 
     const response = await request(app)
       .get("/profile")
@@ -57,5 +59,6 @@ describe("profile", () => {
         })
       ])
     );
+    expect(count["count(*)"]).toBeLessThan(count2["count(*)"]);
   });
 });
