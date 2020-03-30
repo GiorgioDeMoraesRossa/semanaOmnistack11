@@ -1,4 +1,4 @@
-# semanaOmnistack11
+# semana Omnistack 11
 Semana Omnistack 11, tutoriais da rocketseat, utilizando React, Node e React Native.
 
 O objetivo era construir uma aplicação web e um aplicativo que consumissem a mesma API.
