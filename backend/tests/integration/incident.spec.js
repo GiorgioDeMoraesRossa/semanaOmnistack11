@@ -21,7 +21,7 @@ describe("incidents", () => {
         email: "contato@teste.com",
         whatsapp: "53981044323",
         city: "Rio do Sul",
-        uf: "SC"
+        uf: "SC",
       });
 
     const response = await request(app)
@@ -30,7 +30,7 @@ describe("incidents", () => {
       .send({
         title: "teste",
         description: "descriptiontestingdescription",
-        value: 150
+        value: 150,
       });
 
     expect(response.body).toHaveProperty("id");
@@ -45,7 +45,7 @@ describe("incidents", () => {
         email: "contato@teste.com",
         whatsapp: "53981044323",
         city: "Rio do Sul",
-        uf: "SC"
+        uf: "SC",
       });
 
     seedFile(ong.body.id); // populate the incidents table
@@ -68,8 +68,8 @@ describe("incidents", () => {
             name: expect.any(String),
             email: expect.any(String),
             city: expect.any(String),
-            uf: expect.stringMatching(/^[0-9a-zA-Z]{2}$/)
-          })
+            uf: expect.stringMatching(/^[0-9a-zA-Z]{2}$/),
+          }),
         ])
       );
       if (page + 1 > Math.ceil(count["count(*)"] / 5)) {
@@ -89,7 +89,7 @@ describe("incidents", () => {
         email: "contato@teste.com",
         whatsapp: "53981044323",
         city: "Rio do Sul",
-        uf: "SC"
+        uf: "SC",
       });
 
     const incident = await request(app)
@@ -98,7 +98,7 @@ describe("incidents", () => {
       .send({
         title: "teste",
         description: "descriptiontestingdescription",
-        value: 150
+        value: 150,
       });
 
     const response = await request(app)
